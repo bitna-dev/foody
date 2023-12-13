@@ -1,8 +1,29 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+/* global kakao */
+import Map from "./components/Map";
+import Markers from "./components/Markers";
+import * as stores from "@/data/store_data.json";
+import { useState } from "react";
+import StoreBox from "./components/StoreBox";
 
-const inter = Inter({ subsets: ["latin"] });
+declare global {
+  interface Window {
+    kakao: any;
+  }
+}
 
 export default function Home() {
-  return <h1>Hello world</h1>;
+  const storeData = stores["DATA"];
+  const [map, setMap] = useState(null);
+  const [currentStore, setCurrentStore] = useState(null);
+  return (
+    <>
+      <Map setMap={setMap} />
+      <Markers
+        map={map}
+        storeData={storeData}
+        setCurrentStore={setCurrentStore}
+      />
+      <StoreBox store={currentStore} setStore={setCurrentStore} />
+    </>
+  );
 }
