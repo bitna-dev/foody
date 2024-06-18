@@ -1,9 +1,7 @@
 import Map from '@components/Map'
 import Markers from '@components/Markers'
 import StoreBox from '@components/StoreBox'
-import * as stores from '@data/store_data.json'
 import { StoreType } from '@models/store'
-import { revalidatePath } from 'next/cache'
 import { useState } from 'react'
 
 export default function Home({ stores }: { stores: StoreType[] }) {
