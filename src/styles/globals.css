@@ -24,7 +24,7 @@
 
 @media only screen and (max-width: 600px) {
   .navbar--mobile {
-    @apply fixed w-full top-[52px] h-screen bg-blue-800 text-white;
+    @apply fixed w-full top-[52px] h-screen bg-blue-800 text-white z-10;
   }
   .navbar__list {
     @apply hidden;
@@ -33,7 +33,7 @@
     @apply px-[18px] block cursor-pointer;
   }
   .navbar__list--mobile {
-    @apply flex flex-col gap-4 px-[18px] py-6;
+    @apply flex flex-col gap-4 px-[18px] py-6 text-center;
   }
   .navbar__list--item--mobile {
     @apply cursor-pointer transition-all hover:text-gray-400;
