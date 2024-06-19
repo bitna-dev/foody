@@ -31,7 +31,7 @@ const Map = ({ setMap }: MapProps) => {
       <Script
         strategy="afterInteractive"
         type="text/javascript"
-        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_KEY}&autoload=false`}
+        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_KEY}&autoload=false`}
         onReady={loadKakaoMap}
       />
       <div id="map" className="w-full h-screen"></div>
